@@ -1,15 +1,19 @@
 # Introduction
 This project is a continuation of the paper work done in the paper:
 
- [Identification of an algebraic domain in two dimensions from a finite number of its generalized polarization tensors](https://hal.archives-ouvertes.fr/hal-01827232/document). 
+[IDENTIFICATION OF AN ALGEBRAIC DOMAIN IN TWO DIMENSIONS FROM A FINITE NUMBER OF ITS GENERALIZED POLARIZATION TENSORS](https://hal.archives-ouvertes.fr/hal-01827232/document). 
 
 In it we show how one can from finitely many GPTs recover a polynomial which has level set describing the original domain. Spured on by this results we created the following paper
+
 [RECONSTRUCTION OF DOMAINS WITH ALGEBRAIC BOUNDARIES FROM GENERALIZED POLARIZATION TENSORS]() 
 
 which aims to show both analytically and numerically the stability.
 
 ## Installation
-The code is pretty much stand alone except for the  [MatlabBGL toolbox](https://ch.mathworks.com/matlabcentral/fileexchange/10922-matlabbgl) which is too large to upload here. This tool box in neccesary for the graph generation and circuit finding part of the algorithm.
+The code is pretty much stand alone except for the following
+* [SIES](https://github.com/yanncalec/SIES) only the C2 domain generation is used and is already included.
+* [MatlabBGL toolbox](https://ch.mathworks.com/matlabcentral/fileexchange/10922-matlabbgl) which is too large to upload here. This tool box in neccesary for the graph generation and circuit finding part of the algorithm. 
+* [Sub tight ploy](https://ch.mathworks.com/matlabcentral/fileexchange/39664-subtightplot) for better visualization, entirly optional. 
 
 ## Walkthrough
 The best way to see what the codes does is to walk through and example.
@@ -52,7 +56,7 @@ function rD = recoverDomain(TGPT)
 end
 ```
 Unpacking the function:
-* The parameters *BifTol*, *RadInc* and *RadIni* are tunning parameters and are best illusterated in Figure...
+* The parameters *BifTol*, *RadInc* and *RadIni* are tunning parameters.
 * The first step is the creation of a object
 * Next is to recover the coefficeints of the polynomial as the singular vector of the TGPT
 * Then the polynomial is generated symbolicaly from the coefficients.
@@ -71,7 +75,6 @@ hold on
 plot(cD,'blue','Linewidth',3) %Boundary of true domain
 rD.plotLevelSet               %Level set of recovered polynomail
 hold off
-
 rD.plotDomCand(cD)            %Plot the recovered domains
 ```
 ### Choosing the best candidate from those recovered
