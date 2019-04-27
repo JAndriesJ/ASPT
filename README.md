@@ -2,6 +2,9 @@
 This project is a continuation of the paper work done in the paper [Identification of an algebraic domain in two dimensions from a finite number of its generalized polarization tensors](https://hal.archives-ouvertes.fr/hal-01827232/document). In it we show how one can from finitely many GPTs recover a polynomial which has level set describing the original domain. Spured on by this results we created the following paper [RECONSTRUCTION OF DOMAINS WITH ALGEBRAIC BOUNDARIES FROM
 GENERALIZED POLARIZATION TENSORS]() which goes the extra mile and recovers the domain from the the polynomail level set.
 
+## Installation
+The code is pretty much stand alone except for the  [MatlabBGL toolbox](https://ch.mathworks.com/matlabcentral/fileexchange/10922-matlabbgl) which is too large to upload here. This tool box in neccesary for the graph generation and circuit finding part of the algorithm.
+
 ## Walkthrough
 The best way to see what the codes does is to walk through and example.
 ### Domain generation
