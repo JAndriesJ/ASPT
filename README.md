@@ -26,7 +26,7 @@ cD = shape.CompositeDoms.AddCompDom(1, nbPoints);
 Here a domain is generated with the following information:
 * C2 boundary information i.e. boundary: points, velocities, acceleration, unit normal vectors.
 * The origin is contained in the boundary.
-* The domain is bounded 
+* The domain is bounded. 
 * The degree of the domain is known or easilly computed.
 
 ### Compute Tesselated Generalized Polarization Tensor (TGPT)
