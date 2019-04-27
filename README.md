@@ -1,6 +1,12 @@
 # Introduction
-This project is a continuation of the paper work done in the paper [Identification of an algebraic domain in two dimensions from a finite number of its generalized polarization tensors](https://hal.archives-ouvertes.fr/hal-01827232/document). In it we show how one can from finitely many GPTs recover a polynomial which has level set describing the original domain. Spured on by this results we created the following paper [RECONSTRUCTION OF DOMAINS WITH ALGEBRAIC BOUNDARIES FROM
-GENERALIZED POLARIZATION TENSORS]() which goes the extra mile and recovers the domain from the the polynomail level set.
+This project is a continuation of the paper work done in the paper:
+
+ [Identification of an algebraic domain in two dimensions from a finite number of its generalized polarization tensors](https://hal.archives-ouvertes.fr/hal-01827232/document). 
+
+In it we show how one can from finitely many GPTs recover a polynomial which has level set describing the original domain. Spured on by this results we created the following paper
+[RECONSTRUCTION OF DOMAINS WITH ALGEBRAIC BOUNDARIES FROM GENERALIZED POLARIZATION TENSORS]() 
+
+which aims to show both analytically and numerically the stability.
 
 ## Installation
 The code is pretty much stand alone except for the  [MatlabBGL toolbox](https://ch.mathworks.com/matlabcentral/fileexchange/10922-matlabbgl) which is too large to upload here. This tool box in neccesary for the graph generation and circuit finding part of the algorithm.
@@ -19,12 +25,10 @@ Here a domain is generated with the following information:
 * The domain is bounded 
 * The degree of the domain is known or easilly computed.
 
-### Tesselated Generalized Polarization Tensor (TGPT)
+### Compute Tesselated Generalized Polarization Tensor (TGPT)
 ```
 TGPTcD = GPT.makeTGPT(cD, lambda, cD.degree);
 ```
-The TGPT is calculated for the domain. 
-
 
 ### Domain recovery 
 ```
@@ -72,16 +76,33 @@ rD.plotDomCand(cD)            %Plot the recovered domains
 ```
 ### Choosing the best candidate from those recovered
 ```
-%% Export the domains as .jpg of set pixel size
 rD.exportDomCandidatesJPG     % Candidate domains
 exportDomJPG(Dom)             % True domains
 ```
-```
-%% Read the exported domain .jpg files as curves, compute first TGPTs and compare 
-% dir = '/home/user/MatLabProjects/PADRA/Figures/Recoverd Domains JPG Images/11';
-% domRank = getDomRank(dir);
-```
+Export the domains as .jpg of set pixel size
 
+```
+dir = '/home/user/MatLabProjects/PADRA/Figures/Recoverd Domains JPG Images/11';
+domRank = getDomRank(dir);
+```
+Read the exported domain .jpg files as curves, compute first TGPTs and compare. **Note: file paths will have to be changed.**
+
+### To duplicate examples in Paper
+Here we show how to access the examples in the paper mentioned in the introduction aswell as some further examples. The way to do this is to look in the "Figures" folder. In it the file names will contain a number i.e. *CompDomLvLSet1.png* or *CompDomRecDom1.png*.
+
+![The domain used to explan the algorithm.](CompDomLvLSet1.png)
+![The candidate domains recovered.](CompDomRecDom1.png)
+
+ The examples used in the paper were:
+* CompDomLvLSet3.png
+* CompDomLvLSet4.png
+* CompDomLvLSet5.png
+* CompDomLvLSet6.png
+* CompDomLvLSet11.png
+
+There are more examples, both positive and negative, for instance:
+ ![Image of the recovered level set of a shell domain.](CompDomLvLSet7.png)
+ ![A kite shaped domain where recovery of the level set failed.](CompDomLvLSet17.png)
 
 
 
